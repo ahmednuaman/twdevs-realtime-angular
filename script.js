@@ -1,4 +1,4 @@
-angular.module('midkent-realtime-webapp', [])
+angular.module('realtime-webapp', [])
   .service('socketService', [(function () {
       function SocketService () {
         this.socket = io.connect('http://localhost:8001');
