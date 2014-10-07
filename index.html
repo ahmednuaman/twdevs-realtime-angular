@@ -1,23 +1,48 @@
 <html data-ng-app="realtime-webapp">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <style>
+    body {
+      padding-top: 70px;
+    }
+  </style>
   <title>Web app</title>
 </head>
 <body>
-  <div>
-    <div id="form" data-ng-controller="FormController">
-      <form data-ng-submit="sendMessage($event)">
-        <label>Name:<input type="text" data-ng-model="message.name"></label>
-        <br>
-        <label>Message:<textarea name="" id="" cols="30" rows="10" data-ng-model="message.message"></textarea></label><br>
-        <button type="submit">Send!</button>
-      </form>
-    </div>
-    <div id="messages" data-ng-controller="MessagesController">
-      <div data-ng-repeat="message in messages">
-        <ul>
-          <li data-ng-repeat="(key, value) in message"><strong>{{key}}:</strong> {{value}}</li>
-        </ul>
+  <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">Realtime Webapp</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div id="form" class="col-xs-12 col-sm-12 col-md-6 col-lg-4" data-ng-controller="FormController">
+        <form data-ng-submit="sendMessage($event)">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your name" data-ng-model="message.name">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="2" placeholder="Your message" data-ng-model="message.message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send!</button>
+        </form>
+      </div>
+      <div id="messages" class="col-xs-12 col-sm-12 col-md-6 col-lg-8" data-ng-controller="MessagesController">
+        <div class="row">
+          <div data-ng-repeat="message in messages" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div data-ng-id="{{message._id}}" class="panel panel-info">
+              <div class="panel-heading">{{message.name}} says:</div>
+              <div class="panel-body">{{message.message}}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 angular.module('realtime-webapp', [])
-  .service('socketService', [(function () {
-      function SocketService () {
-        this.socket = io.connect('http://localhost:8001');
+  .service('socketService', ['$location', (function () {
+      function SocketService ($location) {
+        this.socket = io.connect('http://' + $location.host() + ':8001');
       }
 
       SocketService.prototype.on = function(event, callback) {
