@@ -1,0 +1,24 @@
+{
+  "name": "twdevs-realtime-angular",
+  "version": "0.0.0",
+  "description": "twdevs-realtime-angular =======================",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmednuaman/twdevs-realtime-angular.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmednuaman/twdevs-realtime-angular/issues"
+  },
+  "homepage": "https://github.com/ahmednuaman/twdevs-realtime-angular",
+  "dependencies": {
+    "express": "^4.9.5",
+    "mongodb": "^1.4.18",
+    "socket.io": "^1.1.0"
+  }
+}

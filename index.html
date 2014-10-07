@@ -1,0 +1,28 @@
+<html data-ng-app="midkent-realtime-webapp">
+<head>
+  <meta charset="UTF-8">
+  <title>Web app</title>
+</head>
+<body>
+  <div>
+    <div id="form" data-ng-controller="FormController">
+      <form data-ng-submit="sendMessage($event)">
+        <label>Name:<input type="text" data-ng-model="message.name"></label>
+        <br>
+        <label>Message:<textarea name="" id="" cols="30" rows="10" data-ng-model="message.message"></textarea></label><br>
+        <button type="submit">Send!</button>
+      </form>
+    </div>
+    <div id="messages" data-ng-controller="MessagesController">
+      <div data-ng-repeat="message in messages">
+        <ul>
+          <li data-ng-repeat="(key, value) in message"><strong>{{key}}:</strong> {{value}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/socket.io-client/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
